@@ -12,20 +12,20 @@
 		<h1 class="categories-title">[[pages:categories]]</h1>
 		{{{ end }}}
 		<ul class="categories" itemscope itemtype="http://www.schema.org/ItemList">
+			<!-- MFF change: Section display -->
 			{{{each categories}}}
+			<!-- IF categories.isSection -->
+			<!-- IMPORT partials/categories/section_item.tpl -->
+			<!-- ELSE -->
 			<!-- IMPORT partials/categories/item.tpl -->
+			<!-- ENDIF categories.isSection -->
 			{{{end}}}
+			<!-- MFF change: Section display END -->
 		</ul>
-		<!-- IMPORT partials/paginator.tpl -->
 	</div>
 	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
 		{{{each widgets.sidebar}}}
 		{{widgets.sidebar.html}}
 		{{{end}}}
 	</div>
-</div>
-<div data-widget-area="footer">
-	{{{each widgets.footer}}}
-	{{widgets.footer.html}}
-	{{{end}}}
 </div>
